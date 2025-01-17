@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ /* 1 - base de estilização do tailwind (zera configurações de browser para uma padronização)
+ 2 - componentes personalizados
+ 3 - classes utilitárias que ajudam a compor os elementos da interface
+
+@tailwind base, components, utilities são as 3 camadas de implementação do tailwind
+
+para acessar use @layer:
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+instalar PostCSS (Plugin) para melhorar a interpretação dos códigos
+instalar o tailwind Css Intelisense (plugin), muito importante para desenvolvimento com Tailwind */
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/*criando layer component (componente)*/
+@layer components {
+  .botao{
+    @apply bg-blue-500 text-white;
+    @apply px-4 py-2 rounded;
+  }
+}
+
+/*herdando a .botao e alterando caracteristicas -> className="botao vermelho"*/
+
+@layer components {
+  .botao.vermelho {
+    @apply bg-red-500;
+  }
+}
