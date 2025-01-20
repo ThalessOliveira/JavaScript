@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ /* 1 - base de estilização do tailwind (zera configurações de browser para uma padronização)
+ 2 - componentes personalizados
+ 3 - classes utilitárias que ajudam a compor os elementos da interface
+
+@tailwind base, components, utilities são as 3 camadas de implementação do tailwind
+
+para acessar use @layer:
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+instalar PostCSS (Plugin) para melhorar a interpretação dos códigos
+instalar o tailwind Css Intelisense (plugin), muito importante para desenvolvimento com Tailwind */
+
+/*criando layer component (componente)*/
+@layer components {
+  .botao{
+    @apply bg-blue-500 text-white;
+    @apply px-4 py-2 rounded;
+  }
+}
+
+/*herdando a .botao e alterando caracteristicas -> className="botao vermelho"*/
+
+@layer components {
+  .botao.vermelho {
+    @apply bg-red-500;
+  }
+}
+
+@layer utilities { /*Criando utilities para um layout boxed*/
+  .boxed {
+    @apply mx-auto lg:max-w-5xl xl:max-w-7xl w-full; /*Aqui o layout vai limitar o tamanho para telas maiores, e o conteúdo vai ficar no meio*/
+    @apply px-7 xl:p-0 /*quando nenhum prefixo for adicionado (px-7) vai ser aplicado primeiro no mobile (mobile first)*/
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
