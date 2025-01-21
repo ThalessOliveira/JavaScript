@@ -1,0 +1,1 @@
+Nas pastas em que tiver src, criar o projeto e inserir o arquivo src e as respectivas configurações do projeto.
