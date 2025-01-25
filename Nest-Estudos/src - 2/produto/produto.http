@@ -1,0 +1,26 @@
+#plugin Rest Client
+
+GET http://localhost:4000/produtos/ping
+
+###
+
+#buscar todos os produtos
+GET http://localhost:4000/produtos 
+#aqui vamos fazer a requisição dos produtos
+
+###
+
+GET http://localhost:4000/produtos/1
+
+###
+
+#criando requisição para adicionar produto
+POST http://localhost:4000/produtos
+Content-Type: application/json
+
+{
+    "nome": "Teclado Mecânico Logitech",
+    "descricao": "Mehorando a esperiência dos Gamers com o novo teclado mecânico Logitech para alto desempenho em jogos.",
+    "preco": 999.9,
+    "ImagemUrl": "https://m.media-amazon.com/images/I/51HaCM8wFcL.__AC_SX300_SY300_QL70_ML2_.jpg"
+}
