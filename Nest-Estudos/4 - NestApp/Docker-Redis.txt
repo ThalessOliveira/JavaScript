@@ -1,0 +1,48 @@
+Instalando Redis com o Docker
+
+#instalar o Redis via docker exclui a necessidade de dar comandos como
+#redis-server, para iniciar um serviço do redis, é somente necessário
+#usar o comando de iniciar o container do redis
+
+1 - Abra o um terminal bash:
+docker pull redis
+
+2 - Iniciar uma imagem do redis:
+docker run --name redis-container -d -p 6379:6379 redis
+
+--name redis-container: Define o nome do container como "redis-container".
+-d: Faz o container rodar em segundo plano.
+-p 6379:6379: Mapeia a porta 6379 do container para a porta 6379 do pc (porta padrão do Redis).
+
+3 - Testando se o Redis ta funcionando:
+no terminal do container:
+
+docker exec -it redis-container redis-cli
+
+vai aparecer: 127.0.0.1:6379>
+digite ping
+a resposta vai ser PONG se estiver funcionando
+
+o redis agora esta rodando no docker
+
+4 - iniciar e parar a instancia do Redis
+
+Iniciar:
+docker start redis-container
+
+Parar:
+docker stop redis-container
+
+5 - entrar no container do redis:
+docker exec -it redis-container redis-cli
+
+Sair do container:
+exit
+
+6 - verificar se o container esta rodando:
+docker ps
+
+
+
+
+

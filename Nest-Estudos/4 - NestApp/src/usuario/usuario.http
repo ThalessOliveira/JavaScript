@@ -1,0 +1,15 @@
+#fazendo requisições para usuario
+
+#criando usuario
+POST http://localhost:4000/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Thales",
+    "email": "thales@gmail.com",
+    "senha": "123456"
+}
+
+###obtendo usuario
+
+GET http://localhost:4000/usuarios

@@ -1,0 +1,31 @@
+1 - Dependencias para usar o Redis na aplicação
+(Redis e IoRedis)
+
+instalação:
+
+npm i redis
+
+npm i ioredis
+
+NestJs config:
+
+npm i @nestjs/config
+
+2 - Através do NestJs Config podemos configurar as variáveis de ambiente
+
+em app.module.ts:
+
+@Module, em imports coloque:
+
+ConfigModule.forRoot() para configurar as variaveis de ambiente
+
+Crie um .env na pasta raiz do projeto
+Neste arquivo são as configurações de ambiente 
+(não deve ser subidas para o github em casa de uma aplicação real)
+
+Para usar o .env, crie um .env.sample no qual não irá conter informações sigilosas
+Ao baixar a aplicação renomeie para .env
+
+3 - Crie um módulo para o database
+
+nest g mo db
